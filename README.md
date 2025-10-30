@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Minimal Portfolio — Clean, simple, beginner-friendly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is intentionally minimal — a tiny, well-structured portfolio starter for beginners that prioritizes clean code and readability over bells and whistles.
 
-Currently, two official plugins are available:
+Key ideas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Minimal by design: a single page with clear semantic sections (Intro, Projects, Contact).
+- Clean-code friendly: small components, explicit names, no global state or complicated build steps.
+- Beginner-first: easy to edit, easy to extend — replace text and links and you're ready to go.
 
-## Expanding the ESLint configuration
+## Live demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This site is deployed on Vercel: https://portfolio-yettabaas-projects.vercel.app/
 
-- Configure the top-level `parserOptions` property like this:
+## Quick start
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Install dependencies
+2. Run the dev server
+
+```bash
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Open http://localhost:3000 and edit files under `src/`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## What to edit
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `src/pages/home.tsx` — main content and sections.
+- `src/components/` — small UI pieces (feel free to remove or simplify further).
+- `src/assets/global.css` and `tailwind.config.js` — styling tokens.
+
+## Keeping it minimal
+
+If you want to reduce this project to the absolute minimum, consider:
+
+- Removing unused components in `src/components/`.
+- Deleting sample data in `src/data/` (for example `repos.json`) if you don't use it.
+- Removing unnecessary dependencies from `package.json`.
+
+## Deployment
+
+- Vercel (recommended for simplicity): connect your GitHub repo and deploy — the defaults work for this Vite app.
+- The app is already deployed here: https://portfolio-yettabaas-projects.vercel.app/
+
+## Notes for maintainers
+
+- Goal: keep public surface area tiny and code easy to read.
+- Prefer editing `src/pages/home.tsx` for content changes and keep components focused.
+
+## License
+
+MIT — use and modify freely.
